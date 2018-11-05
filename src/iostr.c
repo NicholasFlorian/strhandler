@@ -15,41 +15,48 @@ int softenIntInput(){
 	//get input
 	softInt = softenInt((in = softenStringInput()));
 	
-    free(in);
+
+	free(in);
+
     return softInt;
-	
 }
 
 int softenInt(char* in){
     
-    //var
+	//var
 	int softInt;
-	
-	
-	softInt = 0;
-	
-    //use atof in order to convert
-    softInt = atof(in);
-    
-    //return a flag for incorrect data
-    
-    /*
-     * atof defualts to a value of 0 if the string
-     * is not a valid number. If the user doesnt
-     * enter 0 as the first character then it
-     * returns -1.
-     */
-    
-    if((int)in[0] != 0 && softInt == 0){
-        
-        //softenInt returns -1 for incorrect numbers
-        free(in);
-        return -1;
-        
+   	int len;
+
+    softInt = 0;
+    len = strlen(in);
+
+
+    //watch out for empty strings
+    if(len == 0)
+    	return -1;
+
+    for(int i = 0; i < len; i++){
+
+    	// '0' <= i <= '9' or i = '-' at start
+    	if(i == 0){
+    		if(!((48 <= in[i] && in[i] <= 57) || in[i] == 45))
+    			return -1;
+    	}
+    	else{
+    		if(!(48 <= in[i] && in[i] <= 57))
+    			return -1;
+    	}
+
     }
-    
-    return softInt;
-    
+
+
+    return atof(in);
+}
+
+//untested
+void softenString(char *in){
+
+	in = realloc(in, sizeof(char) * (strlen(in) + 1));
 }
 
 char* softenStringInput(){
@@ -60,6 +67,7 @@ char* softenStringInput(){
 	//set default off
 	lineptr = malloc(sizeof(char) * 201);
 	
+
 	fgets(lineptr, 200, stdin);
 
 	//soften input

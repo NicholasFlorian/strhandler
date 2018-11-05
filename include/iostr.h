@@ -13,21 +13,26 @@
  **/
 #define MAX  80
 
-/**Function to read user input
- *@return user input string
- **/
-char* softenStringInput();
-
-/**read user input
- *@return user input int
- **/
-int softenIntInput();
-
 /**check if string can be a letter
  *@pre meant for selecting options from 0 and up
  *@return the int it becomes, or -1 if not
  *@param in - the string the user wants to check
  **/
 int softenInt(char *in);
+
+/**read user input
+ *@return user input int
+ **/
+int softenIntInput();
+
+/**Function to reduce extra string allocation
+ *@return mem effiecent String
+ **/
+void softenString();
+
+/**Function to read user input
+ *@return user input string
+ **/
+char* softenStringInput();
 
 #endif

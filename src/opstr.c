@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "opstr.h"
 //concat
 
 
@@ -13,18 +14,20 @@ void opcat(char* main, char* cat){
 	int catSize;
 	int totalSize;
 
-
 	//assign
-	mainSize 	= strlen(main);
-	catSize 	= strlen(cat);
+	mainSize 	= oplen(main);
+	catSize 	= oplen(cat);
 	totalSize 	= mainSize + catSize;
-	final = malloc(sizeof(char) * totalSize + 1);
+	final 		= malloc(sizeof(char) * totalSize + 1);
 
-	for(int i = 0; i < mainSize; i++)
+	for(int i = 0; i < mainSize - 1; i++)
 		final[i] = main[i];
 
-	for(int i = 0; i < catSize; i++)
+	for(int i = 0; i < catSize - 1; i++)
 		final[i + mainSize] = cat[i];
+
+	final[totalSize]= '\0';
+
 
 	free(cat);
 	free(main);
