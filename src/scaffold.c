@@ -21,7 +21,6 @@ int main(int args, char **argv){
 
 	printf("Testing iostr softenStringInput.\n");
 	printf("Testing opstr oplen.\n");
-	printf("Testing opstr opmem.\n\n");
 	printf("\x1b[0m");
 
 	printf("Input a string and see its result <length><bytes><String>.\n");
@@ -31,16 +30,13 @@ int main(int args, char **argv){
 		
 		//var
 		int strSize;
-		int memSize;
+
 
 		strSize = 0;
-		memSize = 0;
-
-
 		strSize = oplen(inTest1);
-		memSize = opmem(inTest1);
 
-		printf("<%d><%d><%s>\n", strSize, memSize, inTest1);
+
+		printf("<%d><%s>\n", strSize, inTest1);
 		
 
 		free(inTest1);
@@ -103,7 +99,7 @@ int main(int args, char **argv){
 
 	//test 5
 	printf("\x1b[31m");
-	printf("\nTest 4.\n");
+	printf("\nTest 5.\n");
 	printf("\x1b[34m");
 
 	printf("\x1b[34m");
@@ -119,7 +115,7 @@ int main(int args, char **argv){
 		opcat(mainTest4, catTest4);
 		printf("<%s>\n", mainTest4);
 
-		free(mainTest4);
+		//free(mainTest4);
 	}
 
 

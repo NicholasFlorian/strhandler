@@ -13,16 +13,17 @@
  *@param first - first string (becomes concatted)
  *@param cat - string to add 
  **/
-void opcat(char* first, char* cat);
+void opcat(char** first, char* cat);
 
 /** Simple string length finder
  *@param in - string to measure
  **/
 int oplen(char* in);
 
-/** Finds total memory of string
- *@param in - string to measure
+/** Memory controlled insert function
+ *@param first - first string (becomes concatted)
+ *@param cat - string to add
  **/
-int opmem(char* in);
+void opinsert(char* main, char* insert);
 
 #endif

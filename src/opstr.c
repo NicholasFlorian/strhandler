@@ -6,7 +6,7 @@
 //concat
 
 
-void opcat(char* main, char* cat){
+void opcat(char** main, char* cat){
 
 	//var
 	char* final;
@@ -15,24 +15,32 @@ void opcat(char* main, char* cat){
 	int totalSize;
 
 	//assign
-	mainSize 	= oplen(main);
+	mainSize 	= oplen(*main);
 	catSize 	= oplen(cat);
 	totalSize 	= mainSize + catSize;
 	final 		= malloc(sizeof(char) * totalSize + 1);
 
-	for(int i = 0; i < mainSize - 1; i++)
-		final[i] = main[i];
 
-	for(int i = 0; i < catSize - 1; i++)
-		final[i + mainSize] = cat[i];
+	for(int i = 0; i < mainSize; i++){
 
-	final[totalSize]= '\0';
+		printf("%c\n", (*main)[i]);
+		final[i] = (*main)[i];
+	}
 
 
-	free(cat);
-	free(main);
+	for(int i = 0; i < catSize; i++){
 
-	main = final;
+		printf("%c\n", cat[i]);
+		final[mainSize + i] = cat[i];
+	}
+
+	final[totalSize] = '\0';
+
+
+	//free(cat);
+	//free(main);
+
+	*main = final;
 
 }
 
@@ -50,9 +58,11 @@ int oplen(char* in){
 	return len;
 }
 
-int opmem(char* in){
+void opinsert(char* main, char* insert){
 
-	return oplen(in) + 1; // /sizeof(char);
+	//var
+	char* final;
+
 }
 
 //insert
