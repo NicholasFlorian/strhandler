@@ -112,7 +112,7 @@ int main(int args, char **argv){
 	while(strcmp((mainTest4 = softenStringInput()), "q") != 0){
 		  
 		catTest4 = softenStringInput();
-		opcat(mainTest4, catTest4);
+		opcat(&mainTest4, catTest4);
 		printf("<%s>\n", mainTest4);
 
 		//free(mainTest4);

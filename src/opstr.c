@@ -37,8 +37,8 @@ void opcat(char** main, char* cat){
 	final[totalSize] = '\0';
 
 
-	//free(cat);
-	//free(main);
+	free(cat);
+	free(*main);
 
 	*main = final;
 
