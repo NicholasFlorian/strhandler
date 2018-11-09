@@ -115,9 +115,10 @@ int main(int args, char **argv){
 		opcat(&mainTest4, catTest4);
 		printf("<%s>\n", mainTest4);
 
-		//free(mainTest4);
+		free(mainTest4);
 	}
 
+	free(mainTest4);
 
 	
 

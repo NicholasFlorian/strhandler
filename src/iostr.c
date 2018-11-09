@@ -24,10 +24,8 @@ int softenIntInput(){
 int softenInt(char* in){
     
 	//var
-	int softInt;
    	int len;
 
-    softInt = 0;
     len = strlen(in);
 
 

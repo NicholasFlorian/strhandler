@@ -23,14 +23,14 @@ void opcat(char** main, char* cat){
 
 	for(int i = 0; i < mainSize; i++){
 
-		printf("%c\n", (*main)[i]);
+		//printf("%c\n", (*main)[i]);
 		final[i] = (*main)[i];
 	}
 
 
 	for(int i = 0; i < catSize; i++){
 
-		printf("%c\n", cat[i]);
+		//printf("%c\n", cat[i]);
 		final[mainSize + i] = cat[i];
 	}
 
